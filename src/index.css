@@ -14,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 210 100% 50%;
+    --primary: 220 70% 50%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -33,7 +33,7 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
   }
 
   * {
@@ -44,6 +44,7 @@
     @apply bg-background text-foreground antialiased;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: Arial, sans-serif;
   }
 
   /* For smooth transitions between pages */
@@ -72,11 +73,11 @@
 
 @layer components {
   .product-item {
-    @apply flex items-center p-4 border border-gray-100 rounded-lg mb-2 transition-all duration-200;
+    @apply flex items-center p-3 border border-gray-200 rounded-md mb-2 transition-all duration-200;
   }
   
   .product-item:hover {
-    @apply shadow-sm bg-gray-50;
+    @apply shadow-sm bg-gray-100;
   }
   
   .product-item-selected {
@@ -84,6 +85,18 @@
   }
   
   .input-animated {
-    @apply transition-all duration-200 focus:ring-2 focus:ring-primary/30 focus:border-primary;
+    @apply transition-all duration-200 focus:ring-1 focus:ring-primary/30 focus:border-primary;
+  }
+
+  .school-button {
+    @apply bg-blue-500 hover:bg-blue-600 text-white font-normal py-1 px-3 rounded-sm border border-blue-600 shadow-sm;
+  }
+
+  .school-card {
+    @apply bg-white border border-gray-300 rounded-sm shadow-sm p-3;
+  }
+
+  .school-input {
+    @apply border border-gray-300 rounded-sm px-2 py-1 w-full focus:outline-none focus:border-blue-500;
   }
 }
