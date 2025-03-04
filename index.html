@@ -1,12 +1,27 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>simple-product-list</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>ПродуктЛист - Список покупок</title>
+    <meta name="description" content="Простой список покупок с поиском по каталогу продуктов." />
+    <meta name="author" content="Скопинцев Михаил Николаевич" />
     <meta property="og:image" content="/og-image.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    
+    <!-- Preconnect to CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Mobile specific meta -->
+    <meta name="theme-color" content="#1E88E5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- App styles - will be replaced with bundled CSS in production -->
+    <link rel="stylesheet" href="/src/index.css">
   </head>
 
   <body>
@@ -14,5 +29,41 @@
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Fallback for GitHub Pages static hosting -->
+    <script>
+      // Check if running on GitHub Pages
+      if (window.location.hostname.endsWith('github.io')) {
+        // Create a simple message if scripts don't load
+        window.addEventListener('DOMContentLoaded', function() {
+          setTimeout(function() {
+            if (!window.reactLoaded) {
+              const root = document.getElementById('root');
+              if (root && root.children.length === 0) {
+                const message = document.createElement('div');
+                message.innerHTML = `
+                  <div style="text-align: center; padding: 20px; font-family: 'Inter', sans-serif;">
+                    <h1>ПродуктЛист</h1>
+                    <p>Для запуска приложения, пожалуйста, скачайте репозиторий и запустите локально:</p>
+                    <pre style="background: #f1f1f1; padding: 10px; border-radius: 5px; text-align: left; display: inline-block;">
+npm install
+npm run dev</pre>
+                  </div>
+                `;
+                root.appendChild(message);
+              }
+            }
+          }, 2000);
+        });
+      }
+      
+      // Flag to indicate React has loaded
+      window.reactLoaded = false;
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          window.reactLoaded = true;
+        }, 500);
+      });
+    </script>
   </body>
 </html>
